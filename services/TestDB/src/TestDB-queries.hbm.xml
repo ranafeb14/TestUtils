@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="saveEmployee">
+        <![CDATA[
+        insert into Employee  (name, salary,startDate,employee_code) values (:name,:salary,:_SYSTEM_CURRENT_DATE,:employeeCode)
+        ]]>
+    <query-param name="name" type="java.lang.String"/>
+    <query-param name="salary" type="java.lang.Integer"/>
+    <query-param name="employeeCode" type="java.math.BigInteger"/>
+    </sql-query>
+
+    <sql-query name="test">
+        <![CDATA[
+        select * from Employee where name in (:name)
+        ]]>
+    <query-param name="name" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="test__count">
+        <![CDATA[
+        select count(*) from (select * from Employee where name in (:name)) wmTempTable
+        ]]>
+    <query-param name="name" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

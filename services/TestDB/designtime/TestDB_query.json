@@ -1,0 +1,127 @@
+{
+  "saveEmployee" : {
+    "name" : "saveEmployee",
+    "description" : "saveMultiple employees",
+    "version" : "V2",
+    "queryString" : "insert into Employee  (name, salary,startDate,employee_code) values (:name,:salary,:startDate,:employeeCode)",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "INSERT",
+    "parameters" : [ {
+      "name" : "name",
+      "type" : "string",
+      "list" : true,
+      "variableType" : "PROMPT",
+      "testValue" : [ "Rakesh" ],
+      "required" : true
+    }, {
+      "name" : "salary",
+      "type" : "integer",
+      "list" : true,
+      "variableType" : "PROMPT",
+      "testValue" : [ "5000" ],
+      "required" : true
+    }, {
+      "name" : "startDate",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "DATE",
+      "testValue" : "2017-09-28",
+      "required" : true
+    }, {
+      "name" : "employeeCode",
+      "type" : "big_integer",
+      "list" : true,
+      "variableType" : "PROMPT",
+      "testValue" : [ "12171" ],
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.testutils.testdb.models.query.SaveEmployeeRequest",
+      "method" : "POST"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "test" : {
+    "name" : "test",
+    "description" : "test",
+    "version" : "V2",
+    "queryString" : "select * from Employee where name in (:name)",
+    "countQueryString" : "select count(*) from (select * from Employee where name in (:name)) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "name",
+      "type" : "string",
+      "list" : true,
+      "variableType" : "PROMPT",
+      "testValue" : [ "Rana", "Rakesh" ],
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testutils.testdb.models.query.TestResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "name",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "salary",
+        "fieldName" : "salary",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "startDate",
+        "fieldName" : "startDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Timestamp",
+          "list" : false
+        }
+      }, {
+        "name" : "employee_code",
+        "fieldName" : "employeeCode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

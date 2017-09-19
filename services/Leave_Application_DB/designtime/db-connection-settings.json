@@ -1,0 +1,114 @@
+{
+  "username" : "{WM_CLOUD_MYSQL_USER_NAME}",
+  "password" : "{WM_CLOUD_MYSQL_PASSWORD}",
+  "url" : "jdbc:mysql://{WM_CLOUD_MYSQL_HOST}/Leave_Application_DB?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&createDatabaseIfNotExist=true",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "Leave_Application_DB",
+  "packageName" : "com.testutils.leave_application_db",
+  "dbType" : "MySQL",
+  "host" : "{WM_CLOUD_MYSQL_HOST}",
+  "dbName" : "Leave_Application_DB",
+  "port" : "",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "Test",
+    "schema" : null
+  }, {
+    "table" : "TestTable",
+    "schema" : null
+  }, {
+    "table" : "accrued_elapsed_leaves",
+    "schema" : null
+  }, {
+    "table" : "appraisal",
+    "schema" : null
+  }, {
+    "table" : "attendance_mismatch",
+    "schema" : null
+  }, {
+    "table" : "audit",
+    "schema" : null
+  }, {
+    "table" : "comp-off",
+    "schema" : null
+  }, {
+    "table" : "compensatory_off",
+    "schema" : null
+  }, {
+    "table" : "emp_roles",
+    "schema" : null
+  }, {
+    "table" : "emp_roles_view",
+    "schema" : null
+  }, {
+    "table" : "employee_details",
+    "schema" : null
+  }, {
+    "table" : "holidays",
+    "schema" : null
+  }, {
+    "table" : "leave_application",
+    "schema" : null
+  }, {
+    "table" : "leave_type_role_mapping",
+    "schema" : null
+  }, {
+    "table" : "leave_types",
+    "schema" : null
+  }, {
+    "table" : "leaves",
+    "schema" : null
+  }, {
+    "table" : "log",
+    "schema" : null
+  }, {
+    "table" : "other_leave_types",
+    "schema" : null
+  }, {
+    "table" : "other_leaves_role_mapping",
+    "schema" : null
+  }, {
+    "table" : "roles",
+    "schema" : null
+  }, {
+    "table" : "temp_emp_leave_data",
+    "schema" : null
+  }, {
+    "table" : "temp_leaves",
+    "schema" : null
+  }, {
+    "table" : "test_employee",
+    "schema" : null
+  }, {
+    "table" : "test_employee_details",
+    "schema" : null
+  }, {
+    "table" : "tmp",
+    "schema" : null
+  }, {
+    "table" : "v",
+    "schema" : null
+  }, {
+    "table" : "v2",
+    "schema" : null
+  }, {
+    "table" : "wfh",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ".*" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : "",
+  "hbm2ddl" : "update",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : false
+}

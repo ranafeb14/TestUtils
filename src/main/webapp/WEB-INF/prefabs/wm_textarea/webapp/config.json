@@ -1,0 +1,24 @@
+{
+  "displayName" : "wm_textarea",
+  "group" : "",
+  "templateUrl" : "/pages/Main/Main.html",
+  "controllerUrl" : "/pages/Main/Main.js",
+  "variablesUrl" : "/pages/Main/Main.variables.json",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ],
+    "modules" : [ ]
+  },
+  "properties" : {
+    "maxchars" : {
+      "type" : "number",
+      "displayName" : "Char Limit",
+      "bindable" : "in-bound",
+      "value" : "750",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  }
+}

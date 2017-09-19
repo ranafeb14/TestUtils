@@ -1,0 +1,11 @@
+<wm-page data-ng-controller="Wm_textareaController" name="page1">
+    <wm-content name="content1">
+        <wm-composite name="composite1">
+            <wm-container class="col-md-9" name="container1">
+                <wm-textarea name="text_area" maxchars="bind:maxchars" placeholder="Enter Text" updateon="default"></wm-textarea>
+                <wm-label padding="unset 0.5em" name="charsLeft" caption="{{Widgets.text_area.maxchars - Widgets.text_area.datavalue.length}} Chars Left" conditionalclass="bind:{'label-danger': Widgets.text_area.datavalue.length === Widgets.text_area.maxchars}"
+                class="small"></wm-label>
+            </wm-container>
+        </wm-composite>
+    </wm-content>
+</wm-page>

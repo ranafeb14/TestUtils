@@ -3,7 +3,53 @@
     <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
     <wm-content name="content">
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+            <!--    <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" name="button1" iconclass="glyphicon glyphicon-th-large">-->
+            <!--    </wm-button>-->
+            <wm-popover popoverwidth="200" popoverheight="auto" iconclass="glyphicon glyphicon-th-large" margin="unset 0.5px" name="menu" caption="" contentsource="partial" content="appMenuItems" popoverarrow="true" popoverplacement="bottom" iconposition="top"></wm-popover>
+            <wm-prefab prefabname="wm_textarea" name="wm_textarea1" maxchars="500"></wm-prefab>
+            <wm-grid title="" dataset="bind:Variables.MyJavaServiceSampleJavaOperation.dataSet" navigation="Basic" name="grid1" pagesize="5">
+                <wm-grid-column binding="middleName" caption="Middle Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="deptName" caption="Dept Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="employeeId" caption="Employee Id" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="lastName" caption="Last Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="managerEmail" caption="Manager Email" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="email" caption="Email" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="workLocation" caption="Work Location" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="dateOfJoining" caption="Date Of Joining" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+                <wm-grid-column binding="firstName" caption="First Name" pcdisplay="true" mobiledisplay="true" readonly="true"></wm-grid-column>
+            </wm-grid>
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1">
+                    <wm-composite name="composite1">
+                        <wm-label class="col-md-3 control-label" name="label1"></wm-label>
+                        <wm-container class="col-md-9" name="container1">
+                            <wm-text name="text1"></wm-text>
+                        </wm-container>
+                    </wm-composite>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane2">
+                    <wm-composite name="composite2">
+                        <wm-label class="col-md-3 control-label" name="label2"></wm-label>
+                        <wm-container class="col-md-9" name="container2">
+                            <wm-text name="text2"></wm-text>
+                        </wm-container>
+                    </wm-composite>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane3">
+                    <wm-composite name="composite3">
+                        <wm-label class="col-md-3 control-label" name="label3"></wm-label>
+                        <wm-container class="col-md-9" name="container3">
+                            <wm-text name="text3"></wm-text>
+                        </wm-container>
+                    </wm-composite>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-panel subheading="subheading" iconclass="wi wi-account-circle" autoclose="outsideClick" title="Title" name="panel1">
+                <wm-panel-footer name="panel_footer1">
+                    <wm-label padding="unset 0.5em" class="text-muted" caption="Addition Info" name="label4"></wm-label>
+                </wm-panel-footer>
+            </wm-panel>
         </wm-page-content>
         <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>

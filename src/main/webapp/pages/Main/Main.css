@@ -1,0 +1,7 @@
+.wm-app .popover{
+    margin-left:-105px!important;
+}
+.app-popover.popover.bottom>.arrow.left{
+    left:50%!important;
+    
+}

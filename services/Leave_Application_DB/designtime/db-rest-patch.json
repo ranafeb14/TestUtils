@@ -1,0 +1,22 @@
+{
+  "AccruedElapsedLeavesController" : { },
+  "WfhController" : { },
+  "LeaveTypesController" : { },
+  "ProcedureExecutionController" : { },
+  "CompensatoryOffController" : { },
+  "OtherLeaveTypesController" : { },
+  "HolidaysController" : { },
+  "OtherLeavesRoleMappingController" : { },
+  "TempEmpLeaveDataController" : { },
+  "AuditController" : { },
+  "TempLeavesController" : { },
+  "LeaveTypeRoleMappingController" : { },
+  "EmpRolesViewController" : { },
+  "EmpRolesController" : { },
+  "EmployeeDetailsController" : { },
+  "AttendanceMismatchController" : { },
+  "RolesController" : { },
+  "LeavesController" : { },
+  "LeaveApplicationController" : { },
+  "QueryExecutionController" : { }
+}
