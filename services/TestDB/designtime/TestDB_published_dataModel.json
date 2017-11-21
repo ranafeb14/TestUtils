@@ -7,11 +7,12 @@
     "catalog" : "Test",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "id",
       "foreignKey" : false,
       "generatorType" : "identity",
@@ -33,11 +34,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "employeeCode",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -59,11 +61,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "email",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -85,11 +88,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "ldapUid",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -111,11 +115,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "active",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -137,11 +142,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "0"
+        "defaultValue" : "0",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "isManager",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -163,11 +169,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "employmentType",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -189,11 +196,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "createdDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -215,11 +223,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastModifiedDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -241,13 +250,6 @@
       "unique" : false
     } ],
     "constraints" : [ {
-      "columns" : [ "ldap_uid" ],
-      "composite" : false,
-      "name" : "ldap_uid_UNIQUE",
-      "schemaName" : null,
-      "type" : "UNIQUE",
-      "virtual" : false
-    }, {
       "columns" : [ "employee_code" ],
       "composite" : false,
       "name" : "employee_id_UNIQUE",
@@ -258,6 +260,13 @@
       "columns" : [ "email", "active" ],
       "composite" : true,
       "name" : "employee_email_active_unique_idx",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    }, {
+      "columns" : [ "ldap_uid" ],
+      "composite" : false,
+      "name" : "ldap_uid_UNIQUE",
       "schemaName" : null,
       "type" : "UNIQUE",
       "virtual" : false
@@ -284,11 +293,12 @@
     "catalog" : "Test",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "id",
       "foreignKey" : false,
       "generatorType" : "identity",
@@ -310,11 +320,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "skillId",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -336,11 +347,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "proficiency",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -362,11 +374,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "false"
+        "defaultValue" : "false",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "isPrimary",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -388,11 +401,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "createdDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -414,11 +428,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastModifiedDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -440,11 +455,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastModifiedBy",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -466,11 +482,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "employeeId",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -514,11 +531,12 @@
     "catalog" : "Test",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "id",
       "foreignKey" : false,
       "generatorType" : "identity",
@@ -540,11 +558,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "skillId",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -566,11 +585,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "proficiency",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -592,11 +612,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "false"
+        "defaultValue" : "false",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "isPrimary",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -618,11 +639,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "createdDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -644,11 +666,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastModifiedDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -670,11 +693,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastModifiedBy",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -696,11 +720,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "employeeId",
       "foreignKey" : true,
       "generatorType" : "assigned",
@@ -761,11 +786,12 @@
     "catalog" : "Test",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "id",
       "foreignKey" : false,
       "generatorType" : "identity",
@@ -787,11 +813,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "employeeCode",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -813,11 +840,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "email",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -839,11 +867,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "ldapUid",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -865,11 +894,12 @@
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "active",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -891,11 +921,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "0"
+        "defaultValue" : "0",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "isManager",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -917,11 +948,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "employmentType",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -943,11 +975,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "createdDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -969,11 +1002,12 @@
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastModifiedDate",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -995,13 +1029,6 @@
       "unique" : false
     } ],
     "constraints" : [ {
-      "columns" : [ "email", "active" ],
-      "composite" : true,
-      "name" : "employee_email_active_unique_idx",
-      "schemaName" : null,
-      "type" : "UNIQUE",
-      "virtual" : false
-    }, {
       "columns" : [ "ldap_uid" ],
       "composite" : false,
       "name" : "ldap_uid_UNIQUE",
@@ -1012,6 +1039,13 @@
       "columns" : [ "employee_code" ],
       "composite" : false,
       "name" : "employee_id_UNIQUE",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    }, {
+      "columns" : [ "email", "active" ],
+      "composite" : true,
+      "name" : "employee_email_active_unique_idx",
       "schemaName" : null,
       "type" : "UNIQUE",
       "virtual" : false

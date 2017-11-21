@@ -26,7 +26,8 @@
       "name" : "startDate",
       "type" : "date",
       "list" : false,
-      "variableType" : "DATE",
+      "variableType" : "SERVER",
+      "variableName" : "DATE",
       "testValue" : "2017-09-28",
       "required" : true
     }, {

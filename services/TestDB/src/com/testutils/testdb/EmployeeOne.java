@@ -20,9 +20,9 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name = "`employee_one`", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"`ldap_uid`"}),
-        @UniqueConstraint(columnNames = {"`employee_code`"}),
-        @UniqueConstraint(columnNames = {"`email`", "`active`"})})
+        @UniqueConstraint(name = "`employee_id_UNIQUE`", columnNames = {"`employee_code`"}),
+        @UniqueConstraint(name = "`employee_email_active_unique_idx`", columnNames = {"`email`", "`active`"}),
+        @UniqueConstraint(name = "`ldap_uid_UNIQUE`", columnNames = {"`ldap_uid`"})})
 public class EmployeeOne implements Serializable {
 
     private Long id;

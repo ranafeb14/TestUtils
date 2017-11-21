@@ -50,9 +50,9 @@ public class EmployeeOneController {
 	private EmployeeOneService employeeOneService;
 
 	@ApiOperation(value = "Creates a new EmployeeOne instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public EmployeeOne createEmployeeOne(@RequestBody EmployeeOne employeeOne) {
+public EmployeeOne createEmployeeOne(@RequestBody EmployeeOne employeeOne) {
 		LOGGER.debug("Create EmployeeOne with information: {}" , employeeOne);
 
 		employeeOne = employeeOneService.create(employeeOne);
@@ -60,7 +60,6 @@ public class EmployeeOneController {
 
 	    return employeeOne;
 	}
-
 
     @ApiOperation(value = "Returns the EmployeeOne instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)
@@ -98,14 +97,6 @@ public class EmployeeOneController {
         return deletedEmployeeOne != null;
     }
 
-    @RequestMapping(value = "/email-active", method = RequestMethod.GET)
-    @ApiOperation(value = "Returns the matching EmployeeOne with given unique key values.")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public EmployeeOne getByEmailAndActive(@RequestParam("email") String email, @RequestParam("active") boolean active) {
-        LOGGER.debug("Getting EmployeeOne with uniques key EmailAndActive");
-        return employeeOneService.getByEmailAndActive(email, active);
-    }
-
     @RequestMapping(value = "/ldapUid/{ldapUid}", method = RequestMethod.GET)
     @ApiOperation(value = "Returns the matching EmployeeOne with given unique key values.")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
@@ -120,6 +111,14 @@ public class EmployeeOneController {
     public EmployeeOne getByEmployeeCode(@PathVariable("employeeCode") long employeeCode) {
         LOGGER.debug("Getting EmployeeOne with uniques key EmployeeCode");
         return employeeOneService.getByEmployeeCode(employeeCode);
+    }
+
+    @RequestMapping(value = "/email-active", method = RequestMethod.GET)
+    @ApiOperation(value = "Returns the matching EmployeeOne with given unique key values.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public EmployeeOne getByEmailAndActive(@RequestParam("email") String email, @RequestParam("active") boolean active) {
+        LOGGER.debug("Getting EmployeeOne with uniques key EmailAndActive");
+        return employeeOneService.getByEmailAndActive(email, active);
     }
 
     /**

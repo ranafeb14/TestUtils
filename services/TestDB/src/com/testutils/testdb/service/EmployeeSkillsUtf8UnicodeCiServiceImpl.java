@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -30,6 +31,7 @@ import com.testutils.testdb.EmployeeSkillsUtf8UnicodeCi;
  * @see EmployeeSkillsUtf8UnicodeCi
  */
 @Service("TestDB.EmployeeSkillsUtf8UnicodeCiService")
+@Validated
 public class EmployeeSkillsUtf8UnicodeCiServiceImpl implements EmployeeSkillsUtf8UnicodeCiService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeSkillsUtf8UnicodeCiServiceImpl.class);

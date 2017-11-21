@@ -51,9 +51,9 @@ public class EmployeeUtf8mb4Controller {
 	private EmployeeUtf8mb4Service employeeUtf8mb4Service;
 
 	@ApiOperation(value = "Creates a new EmployeeUtf8mb4 instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public EmployeeUtf8mb4 createEmployeeUtf8mb4(@RequestBody EmployeeUtf8mb4 employeeUtf8mb4) {
+public EmployeeUtf8mb4 createEmployeeUtf8mb4(@RequestBody EmployeeUtf8mb4 employeeUtf8mb4) {
 		LOGGER.debug("Create EmployeeUtf8mb4 with information: {}" , employeeUtf8mb4);
 
 		employeeUtf8mb4 = employeeUtf8mb4Service.create(employeeUtf8mb4);
@@ -61,7 +61,6 @@ public class EmployeeUtf8mb4Controller {
 
 	    return employeeUtf8mb4;
 	}
-
 
     @ApiOperation(value = "Returns the EmployeeUtf8mb4 instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)
@@ -107,20 +106,20 @@ public class EmployeeUtf8mb4Controller {
         return employeeUtf8mb4Service.getByLdapUid(ldapUid);
     }
 
-    @RequestMapping(value = "/email-active", method = RequestMethod.GET)
-    @ApiOperation(value = "Returns the matching EmployeeUtf8mb4 with given unique key values.")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public EmployeeUtf8mb4 getByEmailAndActive(@RequestParam("email") String email, @RequestParam("active") boolean active) {
-        LOGGER.debug("Getting EmployeeUtf8mb4 with uniques key EmailAndActive");
-        return employeeUtf8mb4Service.getByEmailAndActive(email, active);
-    }
-
     @RequestMapping(value = "/employeeCode/{employeeCode}", method = RequestMethod.GET)
     @ApiOperation(value = "Returns the matching EmployeeUtf8mb4 with given unique key values.")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public EmployeeUtf8mb4 getByEmployeeCode(@PathVariable("employeeCode") long employeeCode) {
         LOGGER.debug("Getting EmployeeUtf8mb4 with uniques key EmployeeCode");
         return employeeUtf8mb4Service.getByEmployeeCode(employeeCode);
+    }
+
+    @RequestMapping(value = "/email-active", method = RequestMethod.GET)
+    @ApiOperation(value = "Returns the matching EmployeeUtf8mb4 with given unique key values.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public EmployeeUtf8mb4 getByEmailAndActive(@RequestParam("email") String email, @RequestParam("active") boolean active) {
+        LOGGER.debug("Getting EmployeeUtf8mb4 with uniques key EmailAndActive");
+        return employeeUtf8mb4Service.getByEmailAndActive(email, active);
     }
 
     /**

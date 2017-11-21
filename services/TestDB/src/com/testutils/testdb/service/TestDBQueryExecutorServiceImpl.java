@@ -32,18 +32,6 @@ public class TestDBQueryExecutorServiceImpl implements TestDBQueryExecutorServic
     @Qualifier("TestDBWMQueryExecutor")
     private WMQueryExecutor queryExecutor;
 
-    @Transactional(value = "TestDBTransactionManager")
-    @Override
-    public Integer executeSaveEmployee(SaveEmployeeRequest saveEmployeeRequest) {
-        Map params = new HashMap(3);
-
-        params.put("name", saveEmployeeRequest.getName());
-        params.put("salary", saveEmployeeRequest.getSalary());
-        params.put("employeeCode", saveEmployeeRequest.getEmployeeCode());
-
-        return queryExecutor.executeNamedQueryForUpdate("saveEmployee", params);
-    }
-
     @Transactional(readOnly = true, value = "TestDBTransactionManager")
     @Override
     public Page<TestResponse> executeTest(List<String> name, Pageable pageable) {
@@ -62,6 +50,18 @@ public class TestDBQueryExecutorServiceImpl implements TestDBQueryExecutorServic
         params.put("name", name);
 
         return queryExecutor.exportNamedQueryData("test", params, exportType, TestResponse.class, pageable);
+    }
+
+    @Transactional(value = "TestDBTransactionManager")
+    @Override
+    public Integer executeSaveEmployee(SaveEmployeeRequest saveEmployeeRequest) {
+        Map params = new HashMap(3);
+
+        params.put("name", saveEmployeeRequest.getName());
+        params.put("salary", saveEmployeeRequest.getSalary());
+        params.put("employeeCode", saveEmployeeRequest.getEmployeeCode());
+
+        return queryExecutor.executeNamedQueryForUpdate("saveEmployee", params);
     }
 
 }

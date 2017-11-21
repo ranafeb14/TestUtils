@@ -1,7 +1,7 @@
 {
-	"loginVariable": {
+	"loginAction": {
 		"_id": "wm-loginVariable-wm.LoginVariable-1398237232072",
-		"name": "loginVariable",
+		"name": "loginAction",
 		"owner": "Page",
 		"category": "wm.LoginVariable",
 		"dataSet": {

@@ -5,6 +5,8 @@ package com.testutils.testdb.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -29,7 +31,7 @@ public interface EmployeeOneService {
      * @param employeeOne Details of the EmployeeOne to be created; value cannot be null.
      * @return The newly created EmployeeOne.
      */
-	EmployeeOne create(EmployeeOne employeeOne);
+	EmployeeOne create(@Valid EmployeeOne employeeOne);
 
 
 	/**
@@ -50,16 +52,6 @@ public interface EmployeeOneService {
 	EmployeeOne findById(Long employeeoneId);
 
     /**
-	 * Find and return the EmployeeOne for given email  andactive  if exists.
-	 *
-	 * @param email value of email; value cannot be null.
-	 * @param active value of active; value cannot be null.
-	 * @return EmployeeOne associated with the given inputs.
-     * @throws EntityNotFoundException if no matching EmployeeOne found.
-	 */
-    EmployeeOne getByEmailAndActive(String email, boolean active)throws EntityNotFoundException;
-
-    /**
 	 * Find and return the EmployeeOne for given ldapUid  if exists.
 	 *
 	 * @param ldapUid value of ldapUid; value cannot be null.
@@ -77,6 +69,16 @@ public interface EmployeeOneService {
 	 */
     EmployeeOne getByEmployeeCode(long employeeCode)throws EntityNotFoundException;
 
+    /**
+	 * Find and return the EmployeeOne for given email  andactive  if exists.
+	 *
+	 * @param email value of email; value cannot be null.
+	 * @param active value of active; value cannot be null.
+	 * @return EmployeeOne associated with the given inputs.
+     * @throws EntityNotFoundException if no matching EmployeeOne found.
+	 */
+    EmployeeOne getByEmailAndActive(String email, boolean active)throws EntityNotFoundException;
+
 	/**
 	 * Updates the details of an existing EmployeeOne. It replaces all fields of the existing EmployeeOne with the given employeeOne.
 	 *
@@ -86,7 +88,7 @@ public interface EmployeeOneService {
 	 * @return The updated EmployeeOne.
 	 * @throws EntityNotFoundException if no EmployeeOne is found with given input.
 	 */
-	EmployeeOne update(EmployeeOne employeeOne) throws EntityNotFoundException;
+	EmployeeOne update(@Valid EmployeeOne employeeOne) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing EmployeeOne with the given id.

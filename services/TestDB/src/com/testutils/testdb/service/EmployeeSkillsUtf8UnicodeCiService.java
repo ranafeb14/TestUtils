@@ -5,6 +5,8 @@ package com.testutils.testdb.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -29,7 +31,7 @@ public interface EmployeeSkillsUtf8UnicodeCiService {
      * @param employeeSkillsUtf8unicodeCi Details of the EmployeeSkillsUtf8UnicodeCi to be created; value cannot be null.
      * @return The newly created EmployeeSkillsUtf8UnicodeCi.
      */
-	EmployeeSkillsUtf8UnicodeCi create(EmployeeSkillsUtf8UnicodeCi employeeSkillsUtf8unicodeCi);
+	EmployeeSkillsUtf8UnicodeCi create(@Valid EmployeeSkillsUtf8UnicodeCi employeeSkillsUtf8unicodeCi);
 
 
 	/**
@@ -59,7 +61,7 @@ public interface EmployeeSkillsUtf8UnicodeCiService {
 	 * @return The updated EmployeeSkillsUtf8UnicodeCi.
 	 * @throws EntityNotFoundException if no EmployeeSkillsUtf8UnicodeCi is found with given input.
 	 */
-	EmployeeSkillsUtf8UnicodeCi update(EmployeeSkillsUtf8UnicodeCi employeeSkillsUtf8unicodeCi) throws EntityNotFoundException;
+	EmployeeSkillsUtf8UnicodeCi update(@Valid EmployeeSkillsUtf8UnicodeCi employeeSkillsUtf8unicodeCi) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing EmployeeSkillsUtf8UnicodeCi with the given id.

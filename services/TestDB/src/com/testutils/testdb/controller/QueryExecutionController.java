@@ -48,16 +48,6 @@ public class QueryExecutionController {
     @Autowired
     private TestDBQueryExecutorService queryService;
 
-    @RequestMapping(value = "/queries/saveEmployee", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "saveMultiple employees")
-    public IntegerWrapper executeSaveEmployee(@Valid @RequestBody SaveEmployeeRequest saveEmployeeRequest, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: saveEmployee");
-        Integer _result = queryService.executeSaveEmployee(saveEmployeeRequest);
-        LOGGER.debug("got the result for named query: saveEmployee, result:{}", _result);
-        return new IntegerWrapper(_result);
-    }
-
     @RequestMapping(value = "/queries/test", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "test")
@@ -75,6 +65,16 @@ public class QueryExecutionController {
         LOGGER.debug("Exporting named query: test");
 
         return queryService.exportTest(exportType, name, pageable);
+    }
+
+    @RequestMapping(value = "/queries/saveEmployee", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "saveMultiple employees")
+    public IntegerWrapper executeSaveEmployee(@Valid @RequestBody SaveEmployeeRequest saveEmployeeRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: saveEmployee");
+        Integer _result = queryService.executeSaveEmployee(saveEmployeeRequest);
+        LOGGER.debug("got the result for named query: saveEmployee, result:{}", _result);
+        return new IntegerWrapper(_result);
     }
 
 }

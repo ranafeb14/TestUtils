@@ -16,11 +16,11 @@ import com.testutils.testdb.models.query.*;
 
 public interface TestDBQueryExecutorService {
 
-    Integer executeSaveEmployee(SaveEmployeeRequest saveEmployeeRequest);
-
     Page<TestResponse> executeTest(List<String> name, Pageable pageable);
 
     Downloadable exportTest(ExportType exportType, List<String> name, Pageable pageable);
+
+    Integer executeSaveEmployee(SaveEmployeeRequest saveEmployeeRequest);
 
 }
 

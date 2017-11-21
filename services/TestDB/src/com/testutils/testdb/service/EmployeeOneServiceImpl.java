@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -31,6 +32,7 @@ import com.testutils.testdb.EmployeeOne;
  * @see EmployeeOne
  */
 @Service("TestDB.EmployeeOneService")
+@Validated
 public class EmployeeOneServiceImpl implements EmployeeOneService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeOneServiceImpl.class);
@@ -73,24 +75,6 @@ public class EmployeeOneServiceImpl implements EmployeeOneService {
 
     @Transactional(readOnly = true, value = "TestDBTransactionManager")
     @Override
-    public EmployeeOne getByEmailAndActive(String email, boolean active) {
-        Map<String, Object> emailAndActiveMap = new HashMap<>();
-        emailAndActiveMap.put("email", email);
-        emailAndActiveMap.put("active", active);
-
-        LOGGER.debug("Finding EmployeeOne by unique keys: {}", emailAndActiveMap);
-        EmployeeOne employeeOne = this.wmGenericDao.findByUniqueKey(emailAndActiveMap);
-
-        if (employeeOne == null){
-            LOGGER.debug("No EmployeeOne found with given unique key values: {}", emailAndActiveMap);
-            throw new EntityNotFoundException(String.valueOf(emailAndActiveMap));
-        }
-
-        return employeeOne;
-    }
-
-    @Transactional(readOnly = true, value = "TestDBTransactionManager")
-    @Override
     public EmployeeOne getByLdapUid(String ldapUid) {
         Map<String, Object> ldapUidMap = new HashMap<>();
         ldapUidMap.put("ldapUid", ldapUid);
@@ -118,6 +102,24 @@ public class EmployeeOneServiceImpl implements EmployeeOneService {
         if (employeeOne == null){
             LOGGER.debug("No EmployeeOne found with given unique key values: {}", employeeCodeMap);
             throw new EntityNotFoundException(String.valueOf(employeeCodeMap));
+        }
+
+        return employeeOne;
+    }
+
+    @Transactional(readOnly = true, value = "TestDBTransactionManager")
+    @Override
+    public EmployeeOne getByEmailAndActive(String email, boolean active) {
+        Map<String, Object> emailAndActiveMap = new HashMap<>();
+        emailAndActiveMap.put("email", email);
+        emailAndActiveMap.put("active", active);
+
+        LOGGER.debug("Finding EmployeeOne by unique keys: {}", emailAndActiveMap);
+        EmployeeOne employeeOne = this.wmGenericDao.findByUniqueKey(emailAndActiveMap);
+
+        if (employeeOne == null){
+            LOGGER.debug("No EmployeeOne found with given unique key values: {}", emailAndActiveMap);
+            throw new EntityNotFoundException(String.valueOf(emailAndActiveMap));
         }
 
         return employeeOne;

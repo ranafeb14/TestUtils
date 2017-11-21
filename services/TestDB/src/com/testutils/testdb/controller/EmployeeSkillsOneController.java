@@ -50,9 +50,9 @@ public class EmployeeSkillsOneController {
 	private EmployeeSkillsOneService employeeSkillsOneService;
 
 	@ApiOperation(value = "Creates a new EmployeeSkillsOne instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public EmployeeSkillsOne createEmployeeSkillsOne(@RequestBody EmployeeSkillsOne employeeSkillsOne) {
+public EmployeeSkillsOne createEmployeeSkillsOne(@RequestBody EmployeeSkillsOne employeeSkillsOne) {
 		LOGGER.debug("Create EmployeeSkillsOne with information: {}" , employeeSkillsOne);
 
 		employeeSkillsOne = employeeSkillsOneService.create(employeeSkillsOne);
@@ -60,7 +60,6 @@ public class EmployeeSkillsOneController {
 
 	    return employeeSkillsOne;
 	}
-
 
     @ApiOperation(value = "Returns the EmployeeSkillsOne instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

@@ -10,6 +10,7 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -109,7 +110,7 @@ public class EmployeeSkillsUtf8UnicodeCi implements Serializable {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "`employee_id`", referencedColumnName = "`employee_code`", insertable = false, updatable = false)
+    @JoinColumn(name = "`employee_id`", referencedColumnName = "`employee_code`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`fk_employee_skills_emp_id_1`"))
     public EmployeeUtf8mb4 getEmployeeUtf8mb4() {
         return this.employeeUtf8mb4;
     }

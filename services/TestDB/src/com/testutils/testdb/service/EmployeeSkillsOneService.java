@@ -5,6 +5,8 @@ package com.testutils.testdb.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -29,7 +31,7 @@ public interface EmployeeSkillsOneService {
      * @param employeeSkillsOne Details of the EmployeeSkillsOne to be created; value cannot be null.
      * @return The newly created EmployeeSkillsOne.
      */
-	EmployeeSkillsOne create(EmployeeSkillsOne employeeSkillsOne);
+	EmployeeSkillsOne create(@Valid EmployeeSkillsOne employeeSkillsOne);
 
 
 	/**
@@ -59,7 +61,7 @@ public interface EmployeeSkillsOneService {
 	 * @return The updated EmployeeSkillsOne.
 	 * @throws EntityNotFoundException if no EmployeeSkillsOne is found with given input.
 	 */
-	EmployeeSkillsOne update(EmployeeSkillsOne employeeSkillsOne) throws EntityNotFoundException;
+	EmployeeSkillsOne update(@Valid EmployeeSkillsOne employeeSkillsOne) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing EmployeeSkillsOne with the given id.

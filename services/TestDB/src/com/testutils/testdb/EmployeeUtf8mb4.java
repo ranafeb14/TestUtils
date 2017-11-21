@@ -27,9 +27,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  */
 @Entity
 @Table(name = "`employee_utf8mb4`", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"`email`", "`active`"}),
-        @UniqueConstraint(columnNames = {"`ldap_uid`"}),
-        @UniqueConstraint(columnNames = {"`employee_code`"})})
+        @UniqueConstraint(name = "`ldap_uid_UNIQUE`", columnNames = {"`ldap_uid`"}),
+        @UniqueConstraint(name = "`employee_id_UNIQUE`", columnNames = {"`employee_code`"}),
+        @UniqueConstraint(name = "`employee_email_active_unique_idx`", columnNames = {"`email`", "`active`"})})
 public class EmployeeUtf8mb4 implements Serializable {
 
     private Long id;

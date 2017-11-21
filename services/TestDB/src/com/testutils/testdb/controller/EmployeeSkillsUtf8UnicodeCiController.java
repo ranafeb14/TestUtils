@@ -50,9 +50,9 @@ public class EmployeeSkillsUtf8UnicodeCiController {
 	private EmployeeSkillsUtf8UnicodeCiService employeeSkillsUtf8UnicodeCiService;
 
 	@ApiOperation(value = "Creates a new EmployeeSkillsUtf8UnicodeCi instance.")
-	@RequestMapping(method = RequestMethod.POST)
+@RequestMapping(method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-	public EmployeeSkillsUtf8UnicodeCi createEmployeeSkillsUtf8UnicodeCi(@RequestBody EmployeeSkillsUtf8UnicodeCi employeeSkillsUtf8unicodeCi) {
+public EmployeeSkillsUtf8UnicodeCi createEmployeeSkillsUtf8UnicodeCi(@RequestBody EmployeeSkillsUtf8UnicodeCi employeeSkillsUtf8unicodeCi) {
 		LOGGER.debug("Create EmployeeSkillsUtf8UnicodeCi with information: {}" , employeeSkillsUtf8unicodeCi);
 
 		employeeSkillsUtf8unicodeCi = employeeSkillsUtf8UnicodeCiService.create(employeeSkillsUtf8unicodeCi);
@@ -60,7 +60,6 @@ public class EmployeeSkillsUtf8UnicodeCiController {
 
 	    return employeeSkillsUtf8unicodeCi;
 	}
-
 
     @ApiOperation(value = "Returns the EmployeeSkillsUtf8UnicodeCi instance associated with the given id.")
     @RequestMapping(value = "/{id:.+}", method = RequestMethod.GET)

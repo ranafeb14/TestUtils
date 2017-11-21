@@ -5,6 +5,8 @@ package com.testutils.testdb.service;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -30,7 +32,7 @@ public interface EmployeeUtf8mb4Service {
      * @param employeeUtf8mb4 Details of the EmployeeUtf8mb4 to be created; value cannot be null.
      * @return The newly created EmployeeUtf8mb4.
      */
-	EmployeeUtf8mb4 create(EmployeeUtf8mb4 employeeUtf8mb4);
+	EmployeeUtf8mb4 create(@Valid EmployeeUtf8mb4 employeeUtf8mb4);
 
 
 	/**
@@ -60,6 +62,15 @@ public interface EmployeeUtf8mb4Service {
     EmployeeUtf8mb4 getByLdapUid(String ldapUid)throws EntityNotFoundException;
 
     /**
+	 * Find and return the EmployeeUtf8mb4 for given employeeCode  if exists.
+	 *
+	 * @param employeeCode value of employeeCode; value cannot be null.
+	 * @return EmployeeUtf8mb4 associated with the given inputs.
+     * @throws EntityNotFoundException if no matching EmployeeUtf8mb4 found.
+	 */
+    EmployeeUtf8mb4 getByEmployeeCode(long employeeCode)throws EntityNotFoundException;
+
+    /**
 	 * Find and return the EmployeeUtf8mb4 for given email  andactive  if exists.
 	 *
 	 * @param email value of email; value cannot be null.
@@ -68,15 +79,6 @@ public interface EmployeeUtf8mb4Service {
      * @throws EntityNotFoundException if no matching EmployeeUtf8mb4 found.
 	 */
     EmployeeUtf8mb4 getByEmailAndActive(String email, boolean active)throws EntityNotFoundException;
-
-    /**
-	 * Find and return the EmployeeUtf8mb4 for given employeeCode  if exists.
-	 *
-	 * @param employeeCode value of employeeCode; value cannot be null.
-	 * @return EmployeeUtf8mb4 associated with the given inputs.
-     * @throws EntityNotFoundException if no matching EmployeeUtf8mb4 found.
-	 */
-    EmployeeUtf8mb4 getByEmployeeCode(long employeeCode)throws EntityNotFoundException;
 
 	/**
 	 * Updates the details of an existing EmployeeUtf8mb4. It replaces all fields of the existing EmployeeUtf8mb4 with the given employeeUtf8mb4.
@@ -87,7 +89,7 @@ public interface EmployeeUtf8mb4Service {
 	 * @return The updated EmployeeUtf8mb4.
 	 * @throws EntityNotFoundException if no EmployeeUtf8mb4 is found with given input.
 	 */
-	EmployeeUtf8mb4 update(EmployeeUtf8mb4 employeeUtf8mb4) throws EntityNotFoundException;
+	EmployeeUtf8mb4 update(@Valid EmployeeUtf8mb4 employeeUtf8mb4) throws EntityNotFoundException;
 
     /**
 	 * Deletes an existing EmployeeUtf8mb4 with the given id.

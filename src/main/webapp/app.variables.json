@@ -15,6 +15,17 @@
     } ],
     "operation" : "toast"
   },
+  "goToPage_linkedin" : {
+    "_id" : "wm-goToPage_linkedin-wm.NavigationVariable-1507836695935",
+    "name" : "goToPage_linkedin",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "linkedin",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",

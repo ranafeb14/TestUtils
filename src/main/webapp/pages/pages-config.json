@@ -27,6 +27,10 @@
   "type" : "LEFTNAV",
   "params" : [ ]
 }, {
+  "name" : "linkedin",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",
   "params" : [ ]

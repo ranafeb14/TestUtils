@@ -10,10 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
@@ -32,10 +34,12 @@ import com.testutils.testdb.EmployeeUtf8mb4;
  * @see EmployeeUtf8mb4
  */
 @Service("TestDB.EmployeeUtf8mb4Service")
+@Validated
 public class EmployeeUtf8mb4ServiceImpl implements EmployeeUtf8mb4Service {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeUtf8mb4ServiceImpl.class);
 
+    @Lazy
     @Autowired
 	@Qualifier("TestDB.EmployeeSkillsUtf8UnicodeCiService")
 	private EmployeeSkillsUtf8UnicodeCiService employeeSkillsUtf8UnicodeCiService;
@@ -101,6 +105,23 @@ public class EmployeeUtf8mb4ServiceImpl implements EmployeeUtf8mb4Service {
 
     @Transactional(readOnly = true, value = "TestDBTransactionManager")
     @Override
+    public EmployeeUtf8mb4 getByEmployeeCode(long employeeCode) {
+        Map<String, Object> employeeCodeMap = new HashMap<>();
+        employeeCodeMap.put("employeeCode", employeeCode);
+
+        LOGGER.debug("Finding EmployeeUtf8mb4 by unique keys: {}", employeeCodeMap);
+        EmployeeUtf8mb4 employeeUtf8mb4 = this.wmGenericDao.findByUniqueKey(employeeCodeMap);
+
+        if (employeeUtf8mb4 == null){
+            LOGGER.debug("No EmployeeUtf8mb4 found with given unique key values: {}", employeeCodeMap);
+            throw new EntityNotFoundException(String.valueOf(employeeCodeMap));
+        }
+
+        return employeeUtf8mb4;
+    }
+
+    @Transactional(readOnly = true, value = "TestDBTransactionManager")
+    @Override
     public EmployeeUtf8mb4 getByEmailAndActive(String email, boolean active) {
         Map<String, Object> emailAndActiveMap = new HashMap<>();
         emailAndActiveMap.put("email", email);
@@ -112,23 +133,6 @@ public class EmployeeUtf8mb4ServiceImpl implements EmployeeUtf8mb4Service {
         if (employeeUtf8mb4 == null){
             LOGGER.debug("No EmployeeUtf8mb4 found with given unique key values: {}", emailAndActiveMap);
             throw new EntityNotFoundException(String.valueOf(emailAndActiveMap));
-        }
-
-        return employeeUtf8mb4;
-    }
-
-    @Transactional(readOnly = true, value = "TestDBTransactionManager")
-    @Override
-    public EmployeeUtf8mb4 getByEmployeeCode(long employeeCode) {
-        Map<String, Object> employeeCodeMap = new HashMap<>();
-        employeeCodeMap.put("employeeCode", employeeCode);
-
-        LOGGER.debug("Finding EmployeeUtf8mb4 by unique keys: {}", employeeCodeMap);
-        EmployeeUtf8mb4 employeeUtf8mb4 = this.wmGenericDao.findByUniqueKey(employeeCodeMap);
-
-        if (employeeUtf8mb4 == null){
-            LOGGER.debug("No EmployeeUtf8mb4 found with given unique key values: {}", employeeCodeMap);
-            throw new EntityNotFoundException(String.valueOf(employeeCodeMap));
         }
 
         return employeeUtf8mb4;
